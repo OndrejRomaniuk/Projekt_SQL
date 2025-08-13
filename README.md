@@ -39,7 +39,10 @@ sql-food-prices-project/
 │
 └── README.md
 
+```
+
 **Schéma tvorby základní datové sady**
+```plaintext
 +----------------------+          +----------------------+
 |   CZECHIA_PAYROLL    |          |    CZECHIA_PRICE     |
 |----------------------|          |----------------------|
@@ -169,6 +172,7 @@ sql-food-prices-project/
 **Jméno:** *Ondřej Romaniuk*  
 **Kontakt:** *[LinkedIn]([url](https://www.linkedin.com/in/ond%C5%99ej-romaniuk/)) / [GitHub]([url](https://github.com/OndrejRomaniuk))*  
 **Datum:** *08/2025*
+
 
 
 
