@@ -181,14 +181,6 @@ Důvodem je, že zahrnutí takových záznamů by mohlo zkreslit výsledky srovn
 ---
 
 ## 7️⃣ Autor
-**Jméno:** *Ondřej Romaniuk*  
-**Kontakt:** *[LinkedIn](https://www.linkedin.com/in/ond%C5%99ej-romaniuk/) / [GitHub](https://github.com/OndrejRomaniuk)*
+**Jméno:** *Ondřej Romaniuk* 
 **Datum:** *08/2025*
-
-
-
-
-
-
-
-
+**Kontakt:** *[LinkedIn](https://www.linkedin.com/in/ond%C5%99ej-romaniuk/) / [GitHub](https://github.com/OndrejRomaniuk)*
