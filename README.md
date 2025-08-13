@@ -132,10 +132,10 @@ sql-food-prices-project/
 ---
 
 ### Q3 – Nejpomalejší růst cen
-*Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)? *
+*Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?*
 
 **Shrnutí výsledků:**  
-*(Např.: „Cukr zaznamenal nejnižší průměrný meziroční růst, zejména po roce 2019.“)*
+*Nejpomaleji zdražující kategorií jsou **rajská jablka červená kulatá**, která v roce 2007 meziročně dokonce **zlevnila o 30,28 %**. To ukazuje, že i v rámci obecného růstu cen potravin mohou některé produkty zaznamenat výrazný pokles, pravděpodobně vlivem sezónních nebo tržních faktorů.*
 
 ---
 
@@ -182,8 +182,9 @@ Důvodem je, že zahrnutí takových záznamů by mohlo zkreslit výsledky srovn
 
 ## 7️⃣ Autor
 **Jméno:** *Ondřej Romaniuk*  
-**Kontakt:** *[LinkedIn](https://www.linkedin.com/in/ond%C5%99ej-romaniuk/) / [GitHub](https://github.com/OndrejRomaniuk)* 
+**Kontakt:** *[LinkedIn](https://www.linkedin.com/in/ond%C5%99ej-romaniuk/) / [GitHub](https://github.com/OndrejRomaniuk)*
 **Datum:** *08/2025*
+
 
 
 
