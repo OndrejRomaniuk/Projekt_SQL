@@ -38,8 +38,8 @@ sql-food-prices-project/
 │   ├── Q5_gdp_influence.sql                 # Odpověď na otázku 5
 │
 └── README.md
-
 ```
+---
 
 **Schéma tvorby základní datové sady**
 ```plaintext
@@ -184,6 +184,7 @@ Důvodem je, že zahrnutí takových záznamů by mohlo zkreslit výsledky srovn
 **Jméno:** *Ondřej Romaniuk*  
 **Kontakt:** *[LinkedIn](https://www.linkedin.com/in/ond%C5%99ej-romaniuk/) / [GitHub](https://github.com/OndrejRomaniuk)* 
 **Datum:** *08/2025*
+
 
 
 
