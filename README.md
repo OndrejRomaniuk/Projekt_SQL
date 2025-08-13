@@ -11,13 +11,13 @@ Tento projekt vznikl v rámci studia SQL (ENGETO) a jeho cílem je:
 ## 2️⃣ Použitá data
 
 ### Primární zdroje
-- **Mzdová data** (czechia_payroll) – informace o mzdách v různých odvětvích za několik let. Zdroj: Open data z data.gov.cz, Říjen 2021.
-- **Cenová data** (czechia_price) – informace o cenách vybraných potravin za několik let. Zdroj: Open data z data.gov.cz, Říjen 2021.
+- **Mzdová data** (czechia_payroll) – informace o mzdách v různých odvětvích za několik let. *Zdroj: Open data z data.gov.cz, Říjen 2021.*
+- **Cenová data** (czechia_price) – informace o cenách vybraných potravin za několik let. *Zdroj: Open data z data.gov.cz, Říjen 2021.*
 - Číselníky kategorií potravin, odvětví a dalších pomocných dat pro propojení.
 
 ### Dodatečné zdroje
-- Tabulka `countries` – základní údaje o zemích. Zdroj: Databáze Engeto.
-- Tabulka `economic_indicators` – ukazatele HDP, GINI, daňová zátěž atd. pro evropské státy. Zdroj: Databáze Engeto.
+- Tabulka `countries` – základní údaje o zemích. *Zdroj: Databáze Engeto.*
+- Tabulka `economic_indicators` – ukazatele HDP, GINI, daňová zátěž atd. pro evropské státy. *Zdroj: Databáze Engeto.*
 
 > **Poznámka:** Data nebyla měněna v původních tabulkách. Všechny transformace probíhaly až při tvorbě nových tabulek.
 
@@ -55,79 +55,84 @@ sql-food-prices-project/
 | payroll_year         |          |                      |
 | payroll_quarter      |          |                      |
 +----------------------+          +----------------------+
-   | (odstraněny kvartály,            | (převeden date_from na rok,
-   | zprůměrováno po odvětvích        | Q1 a Q4 odstraněny,
-   | za rok, omezeno 2006–2018,       | regiony zprůměrovány
-   | vytvořeno nové ID)               | na celorepublikové hodnoty,
-   |                                  | vytvořeno nové ID)
-   v                                  v
+   | (filtr průměrná mzda,           | (datum převeden na rok,
+   | jednotka tis. osob,             | odstraněny kvartály Q1/Q4,
+   | přepočteno na FTE,              | regiony zprůměrovány na celorepubliku)
+   | omezení 2006–2018)              | 
+   v                                 v
 +----------------------+          +----------------------+
 | v_payroll_basic_view |          | v_price_data_format  |
 |----------------------|          |----------------------|
-| id_pay               |          | rok                  |
-| value_pay            |          | průměrná_cena        |
-| industry_branch_code |          | id_new               |
-| rok                  |          |                      |
+| id_pay               |          | id_cp                |
+| value_pay            |          | value_cp             |
+| industry_branch_code |          | category_code        |
+| rok                  |          | rok                  |
 +----------------------+          +----------------------+
-
+   | (průměrování kvartálních        | (průměrování regionálních
+   | hodnot na roční)                | hodnot na celorepublikové)
+   v                                 v
 +----------------------+          +----------------------+
-| v_payroll_no_quarter |          |   Ceny_Q (CTE)       |
+| v_payroll_no_quarter |          | v_price_region_avg   |
 |----------------------|          |----------------------|
-| value_pay            |          | rok                  |
-| industry_branch_code |          | id_new               |
-| rok                  |          |                      |
+| value_pay            |          | value_cp             |
+| industry_branch_code |          | category_code        |
+| rok                  |          | rok                  |
 +----------------------+          +----------------------+
-
+   | (doplnění custom ID)            | (doplnění custom ID)
+   v                                 v
 +----------------------+          +----------------------+
-| v_payroll_id_column_ |          |   Ceny_Q (CTE)       |
-| addition             |          |
+| v_payroll_id_column_ |          | v_price_id_column_   |
+| addition             |          | addition             |
 |----------------------|          |----------------------|
-| custom_id_pay        |          | průměrná_cena        |
-| value_pay            |          | id_new               |
-| industry_branch_code |          |                      |
-| rok                  |          |                      |
+| custom_id_pay        |          | custom_id_cp         |
+| value_pay            |          | value_cp             |
+| industry_branch_code |          | category_code        |
+| rok                  |          | rok                  |
 +----------------------+          +----------------------+
-
-
           \                                /
            \                              /
-            \     FULL OUTER JOIN (rok)  /
+            \       FULL OUTER JOIN      /
              \--------------------------/
                           |
                           v
-+----------------------------------------------+
-| t_Ondrej_Romaniuk_project_SQL_primary_final |
-|----------------------------------------------|
-| rok                                          |
-| průměrná_mzda                                |
-| průměrná_cena                                |
-| id_new_payroll                               |
-| id_new_price                                 |
-+----------------------------------------------+
++--------------------------------------------------+
+| t_Ondrej_Romaniuk_project_SQL_primary_final      |
+|--------------------------------------------------|
+| custom_id_pay                                    |
+| value_pay                                        |
+| industry_branch_code                             |
+| rok                                              |
+| custom_id_cp                                     |
+| category_code                                    |
+| value_cp                                         |
++--------------------------------------------------+
 (Payroll má méně hodnot než Price kvůli menšímu počtu kategorií)
+
 ```
 ---
 
 ## 4️⃣ Výzkumné otázky a shrnutí odpovědí
 
 ### Q1 – Růst cen v jednotlivých letech a odvětvích
-*Jak se vyvíjely ceny potravin v čase? Rostly ve všech sektorech nebo jen v některých?*
+*Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?*
 
 **Shrnutí výsledků:**  
-*(Zde doplň stručný komentář – např. „Ve všech kategoriích došlo k růstu, nejvyšší růst zaznamenány mléčné výrobky v roce 2018.“)*
+*Při srovnání dat počátečních a konečných let z dostupné časové řady vyplynulo, že mzdy vzrostly ve všech defaultně nastavených pracovních odvětvích.*
 
 ---
 
 ### Q2 – Kupní síla (kolik kg chleba a kg masa lze koupit)
-*Kolik si lze koupit chleba a masa za průměrnou mzdu v prvním a posledním sledovaném období?*
+*Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?*
 
 **Shrnutí výsledků:**  
-*(Např.: „Kupní síla se zvýšila u obou komodit, u masa více než u chleba.“)*
+*Během sledovaného období vzrostla kupní síla pracovníků ve většině odvětví, pokud se hodnotí podle množství chleba a mléka, které si mohli koupit za průměrnou mzdu. Největší nárůst zaznamenala odvětví peněžnictví a pojišťovnictví, informační a komunikační činnosti a profesní, vědecké a technické činnosti. Naopak menší odvětví či „ostatní“ vykazují jen mírný růst.
+
+Celkově data ukazují, že růst mezd se projevil nerovnoměrně a reálná kupní síla se v jednotlivých sektorech zvyšovala různou rychlostí.*
 
 ---
 
 ### Q3 – Nejpomalejší růst cen
-*Která kategorie potravin zaznamenala nejnižší meziroční procentuální růst?*
+*Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)? *
 
 **Shrnutí výsledků:**  
 *(Např.: „Cukr zaznamenal nejnižší průměrný meziroční růst, zejména po roce 2019.“)*
@@ -158,6 +163,7 @@ sql-food-prices-project/
    - `02_create_secondary_final.sql`
    - `Q1_price_trends.sql` až `Q5_gdp_influence.sql` podle potřeby.
 3. **Prohlédni výsledky** – každý skript pro otázku vrací datovou sadu, která odpovídá na výzkumnou otázku.
+4. **Případně selectuj přímo odpovědní tabulky** - viz databáze - t_ondrej_romaniuk_project_sql_qx_xxxxx_xxxxxx
 
 ---
 
@@ -166,12 +172,17 @@ sql-food-prices-project/
 - U mzdových dat chybí údaje za některé okresy v počátečních letech.
 - Všechny ceny jsou v Kč, mzdy jsou průměrné měsíční hrubé.
 
+Během analýzy se ukázalo, že v tabulce czechia_payroll existují záznamy, které obsahují platnou hodnotu (value), ale u příslušného odvětví (industry_branch) je hodnota NULL.
+Tyto záznamy odpovídaly nekategorizovaným datům nebo spadaly do defaultní kategorie „ostatní“. Protože nešlo jednoznačně určit, ke kterému odvětví patří, byly z analýzy vynechány.
+Důvodem je, že zahrnutí takových záznamů by mohlo zkreslit výsledky srovnání jednotlivých odvětví, a zároveň by jejich přítomnost neumožnila smysluplné interpretace.
+
 ---
 
 ## 7️⃣ Autor
 **Jméno:** *Ondřej Romaniuk*  
-**Kontakt:** *[LinkedIn]([url](https://www.linkedin.com/in/ond%C5%99ej-romaniuk/)) / [GitHub]([url](https://github.com/OndrejRomaniuk))*  
+**Kontakt:** *[LinkedIn](https://www.linkedin.com/in/ond%C5%99ej-romaniuk/) / [GitHub](https://github.com/OndrejRomaniuk)* 
 **Datum:** *08/2025*
+
 
 
 
