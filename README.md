@@ -1,4 +1,4 @@
-# 📊 SQL Projekt: Dostupnost základních potravin a mzdový vývoj v ČR a Evropě
+# 📊 SQL Projekt: Dostupnost základních potravin a mzdový vývoj v ČR
 
 ## 1️⃣ Úvod do projektu
 Tento projekt vznikl v rámci studia SQL (ENGETO) a jeho cílem je:
@@ -184,3 +184,4 @@ Důvodem je, že zahrnutí takových záznamů by mohlo zkreslit výsledky srovn
 **Jméno:** *Ondřej Romaniuk* 
 **Datum:** *08/2025*
 **Kontakt:** *[LinkedIn](https://www.linkedin.com/in/ond%C5%99ej-romaniuk/) / [GitHub](https://github.com/OndrejRomaniuk)*
+
