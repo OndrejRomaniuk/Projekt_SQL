@@ -6,26 +6,24 @@ Tento projekt vznikl v rámci studia SQL (ENGETO) a jeho cílem je:
 - porovnat cenový a mzdový vývoj za vybrané období,
 - doplnit srovnání s dalšími evropskými státy pomocí ukazatelů HDP, GINI a populace.
 
-Výsledky budou sloužit jako datový podklad pro prezentaci na konferenci zaměřené na životní úroveň obyvatel.
-
 ---
 
 ## 2️⃣ Použitá data
 
 ### Primární zdroje
-- **Mzdová data** (canchia-payroll) – informace o mzdách v různých odvětvích za několik let.
-- **Cenová data** (canchia-price) – informace o cenách vybraných potravin za několik let.
+- **Mzdová data** (czechia_payroll) – informace o mzdách v různých odvětvích za několik let. Zdroj: Open data z data.gov.cz, Říjen 2021.
+- **Cenová data** (czechia_price) – informace o cenách vybraných potravin za několik let. Zdroj: Open data z data.gov.cz, Říjen 2021.
 - Číselníky kategorií potravin, odvětví a dalších pomocných dat pro propojení.
 
 ### Dodatečné zdroje
-- Tabulka `countries` – základní údaje o zemích.
-- Tabulka `economic_indicators` – ukazatele HDP, GINI, daňová zátěž atd. pro evropské státy.
+- Tabulka `countries` – základní údaje o zemích. Zdroj: Databáze Engeto.
+- Tabulka `economic_indicators` – ukazatele HDP, GINI, daňová zátěž atd. pro evropské státy. Zdroj: Databáze Engeto.
 
 > **Poznámka:** Data nebyla měněna v původních tabulkách. Všechny transformace probíhaly až při tvorbě nových tabulek.
 
 ---
 
-## 3️⃣ Struktura projektu
+## 3️⃣ Struktura projektu a metodologie
 
 ```plaintext
 sql-food-prices-project/
@@ -41,6 +39,70 @@ sql-food-prices-project/
 │
 └── README.md
 ```
+**Schéma tvorby základní datové sady**
++----------------------+          +----------------------+
+|   CZECHIA_PAYROLL    |          |    CZECHIA_PRICE     |
+|----------------------|          |----------------------|
+| id                   |          | id                   |
+| value                |          | value                |
+| value_type_code      |          | category_code        |
+| unit_code            |          | date_from            |
+| calculation_code     |          | date_to              |
+| industry_branch_code |          | region_code          |
+| payroll_year         |          |                      |
+| payroll_quarter      |          |                      |
++----------------------+          +----------------------+
+   | (odstraněny kvartály,            | (převeden date_from na rok,
+   | zprůměrováno po odvětvích        | Q1 a Q4 odstraněny,
+   | za rok, omezeno 2006–2018,       | regiony zprůměrovány
+   | vytvořeno nové ID)               | na celorepublikové hodnoty,
+   |                                  | vytvořeno nové ID)
+   v                                  v
++----------------------+          +----------------------+
+| v_payroll_basic_view |          | v_price_data_format  |
+|----------------------|          |----------------------|
+| id_pay               |          | rok                  |
+| value_pay            |          | průměrná_cena        |
+| industry_branch_code |          | id_new               |
+| rok                  |          |                      |
++----------------------+          +----------------------+
+
++----------------------+          +----------------------+
+| v_payroll_no_quarter |          |   Ceny_Q (CTE)       |
+|----------------------|          |----------------------|
+| value_pay            |          | rok                  |
+| industry_branch_code |          | id_new               |
+| rok                  |          |                      |
++----------------------+          +----------------------+
+
++----------------------+          +----------------------+
+| v_payroll_id_column_ |          |   Ceny_Q (CTE)       |
+| addition             |          |
+|----------------------|          |----------------------|
+| custom_id_pay        |          | průměrná_cena        |
+| value_pay            |          | id_new               |
+| industry_branch_code |          |                      |
+| rok                  |          |                      |
++----------------------+          +----------------------+
+
+
+          \                                /
+           \                              /
+            \     FULL OUTER JOIN (rok)  /
+             \--------------------------/
+                          |
+                          v
++----------------------------------------------+
+| t_Ondrej_Romaniuk_project_SQL_primary_final |
+|----------------------------------------------|
+| rok                                          |
+| průměrná_mzda                                |
+| průměrná_cena                                |
+| id_new_payroll                               |
+| id_new_price                                 |
++----------------------------------------------+
+(Payroll má méně hodnot než Price kvůli menšímu počtu kategorií)
+
 ---
 
 ## 4️⃣ Výzkumné otázky a shrnutí odpovědí
@@ -105,6 +167,7 @@ sql-food-prices-project/
 
 ## 7️⃣ Autor
 **Jméno:** *Ondřej Romaniuk*  
-**Kontakt:** *LinkedIn / GitHub odkaz*  
+**Kontakt:** *[LinkedIn]([url](https://www.linkedin.com/in/ond%C5%99ej-romaniuk/)) / [GitHub]([url](https://github.com/OndrejRomaniuk))*  
 **Datum:** *08/2025*
+
 
