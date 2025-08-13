@@ -125,9 +125,9 @@ sql-food-prices-project/
 *Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?*
 
 **Shrnutí výsledků:**  
-*Během sledovaného období vzrostla kupní síla pracovníků ve většině odvětví, pokud se hodnotí podle množství chleba a mléka, které si mohli koupit za průměrnou mzdu. Největší nárůst zaznamenala odvětví peněžnictví a pojišťovnictví, informační a komunikační činnosti a profesní, vědecké a technické činnosti. Naopak menší odvětví či „ostatní“ vykazují jen mírný růst.
+*Během sledovaného období vzrostla kupní síla pracovníků ve většině odvětví, pokud se hodnotí podle množství chleba a mléka, které si mohli koupit za průměrnou mzdu. Největší nárůst zaznamenala odvětví peněžnictví a pojišťovnictví, informační a komunikační činnosti a profesní, vědecké a technické činnosti. Naopak menší odvětví či „ostatní“ vykazují jen mírný růst.*
 
-Celkově data ukazují, že růst mezd se projevil nerovnoměrně a reálná kupní síla se v jednotlivých sektorech zvyšovala různou rychlostí.*
+*Celkově data ukazují, že růst mezd se projevil nerovnoměrně a reálná kupní síla se v jednotlivých sektorech zvyšovala různou rychlostí.*
 
 ---
 
@@ -140,18 +140,20 @@ Celkově data ukazují, že růst mezd se projevil nerovnoměrně a reálná kup
 ---
 
 ### Q4 – Roky s růstem cen >10 % oproti mzdám
-*Existuje rok, kdy meziroční nárůst cen potravin výrazně převýšil růst mezd (o více než 10 %)?*
+*Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?*
 
 **Shrnutí výsledků:**  
-*(Např.: „Rok 2022 – ceny potravin rostly o 15 %, mzdy jen o 3 %.“)*
+*Podle dat žádný rok nevykazuje meziroční nárůst cen potravin výrazně vyšší než růst mezd o více než 10 %.*
+
+*Nejvyšší hodnota rozdílu je v roce **2013**, kdy ceny potravin rostly meziročně o **5,10 %**, mzdy klesly o **1,49 %**, což dává rozdíl **6,59 %**. I přesto je rozdíl nižší než hranice 10 %, takže ani tento rok nesplňuje kritérium „výrazně vyšší nárůst cen než mezd“.*
 
 ---
 
 ### Q5 – Vliv HDP na ceny a mzdy
-*Projevil se růst HDP v daném roce výraznějším růstem cen potravin nebo mezd v tom samém či následujícím roce?*
+*Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?*
 
 **Shrnutí výsledků:**  
-*(Např.: „Významná korelace nebyla nalezena, kromě let 2017–2018.“)*
+*Výraznější růst HDP se obecně projevuje zvýšením mezd, což zvyšuje kupní sílu pracovníků. Například v letech **2007 a 2017**, kdy HDP vzrostlo výrazněji než 5 %, rostly mzdy i ceny potravin souběžně. Naopak v roce **2015**, přestože HDP také výrazně vzrostlo, mzdy rostly, ale ceny potravin stagnovaly či klesaly. To ukazuje, že ekonomický růst má spolehlivější vliv na mzdy než na ceny potravin.*
 
 ---
 
@@ -182,6 +184,7 @@ Důvodem je, že zahrnutí takových záznamů by mohlo zkreslit výsledky srovn
 **Jméno:** *Ondřej Romaniuk*  
 **Kontakt:** *[LinkedIn](https://www.linkedin.com/in/ond%C5%99ej-romaniuk/) / [GitHub](https://github.com/OndrejRomaniuk)* 
 **Datum:** *08/2025*
+
 
 
 
