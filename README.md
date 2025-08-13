@@ -1,2 +1,0 @@
-# Projekt_SQL
-ENGETO DATA ACADEMY
