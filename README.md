@@ -56,7 +56,7 @@ sql-food-prices-salaries-project/
 | payroll_quarter      |          |                      |
 +----------------------+          +----------------------+
    | (filtr průměrná mzda,           | (datum převeden na rok,
-   | jednotka tis. osob,             | odstraněny kvartály Q1/Q4,
+   | jednotka tis. osob,             | odstraněny kvartály (vyskytovaly se pouze Q1/Q4),
    | přepočteno na FTE,              | regiony zprůměrovány na celorepubliku)
    | omezení 2006–2018)              | 
    v                                 v
@@ -184,6 +184,7 @@ Důvodem je, že zahrnutí takových záznamů by mohlo zkreslit výsledky srovn
 **Jméno:** *Ondřej Romaniuk* 
 **Datum:** *08/2025*
 **Kontakt:** *[LinkedIn](https://www.linkedin.com/in/ond%C5%99ej-romaniuk/) / [GitHub](https://github.com/OndrejRomaniuk)*
+
 
 
 
