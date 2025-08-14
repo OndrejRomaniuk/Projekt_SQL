@@ -17,7 +17,7 @@ Tento projekt vznikl v rámci studia SQL (ENGETO) a jeho cílem je:
 
 ### Dodatečné zdroje
 - Tabulka `countries` – základní údaje o zemích. *Zdroj: Databáze Engeto.*
-- Tabulka `economic_indicators` – ukazatele HDP, GINI, daňová zátěž atd. pro evropské státy. *Zdroj: Databáze Engeto.*
+- Tabulka `economies` – ukazatele HDP, GINI, daňová zátěž atd. pro evropské státy. *Zdroj: Databáze Engeto.*
 
 > **Poznámka:** Data nebyla měněna v původních tabulkách. Všechny transformace probíhaly až při tvorbě nových tabulek.
 
@@ -184,5 +184,6 @@ Důvodem je, že zahrnutí takových záznamů by mohlo zkreslit výsledky srovn
 **Jméno:** *Ondřej Romaniuk* 
 **Datum:** *08/2025*
 **Kontakt:** *[LinkedIn](https://www.linkedin.com/in/ond%C5%99ej-romaniuk/) / [GitHub](https://github.com/OndrejRomaniuk)*
+
 
 
