@@ -4,7 +4,7 @@
 Tento projekt vznikl v rámci studia SQL (ENGETO) a jeho cílem je:
 - analyzovat dostupnost základních potravin v ČR v kontextu průměrných příjmů,
 - porovnat cenový a mzdový vývoj za vybrané období,
-- doplnit srovnání s dalšími evropskými státy pomocí ukazatelů HDP, GINI a populace.
+- doplnit srovnání z dat evropských států
 
 ---
 
@@ -184,4 +184,5 @@ Důvodem je, že zahrnutí takových záznamů by mohlo zkreslit výsledky srovn
 **Jméno:** *Ondřej Romaniuk* 
 **Datum:** *08/2025*
 **Kontakt:** *[LinkedIn](https://www.linkedin.com/in/ond%C5%99ej-romaniuk/) / [GitHub](https://github.com/OndrejRomaniuk)*
+
 
