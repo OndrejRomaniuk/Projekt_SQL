@@ -26,7 +26,7 @@ Tento projekt vznikl v rámci studia SQL (ENGETO) a jeho cílem je:
 ## 3️⃣ Struktura projektu a metodologie
 
 ```plaintext
-sql-food-prices-project/
+sql-food-prices-salaries-project/
 │
 ├── sql/
 │   ├── 01_create_primary_final.sql          # Sjednocení mzdových a cenových dat pro ČR
@@ -184,6 +184,7 @@ Důvodem je, že zahrnutí takových záznamů by mohlo zkreslit výsledky srovn
 **Jméno:** *Ondřej Romaniuk* 
 **Datum:** *08/2025*
 **Kontakt:** *[LinkedIn](https://www.linkedin.com/in/ond%C5%99ej-romaniuk/) / [GitHub](https://github.com/OndrejRomaniuk)*
+
 
 
 
