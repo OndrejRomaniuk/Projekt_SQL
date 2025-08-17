@@ -11,9 +11,9 @@ SELECT                              								-- řadu jako má price tj. 2006 - 2
 	payroll_year AS rok
 FROM czechia_payroll                  
 WHERE
-	value_type_code = '5958'										-- Průměrná hrubá mzda na zaměstnance
-	AND unit_code = '200'											-- tis. osob (tis. os.)
-	AND calculation_code = '200'									-- přepočtený (FTE – Full Time Equivalent)
+	value_type_code = 5958 										    -- Průměrná hrubá mzda na zaměstnance
+	AND unit_code = 200										    	-- tis. osob (tis. os.)
+	AND calculation_code = 200								    	-- přepočtený (FTE – Full Time Equivalent)
 	AND payroll_year BETWEEN 2006 AND 2018;  
 
 				--- EDITAČNÍ OBSLUHA VIEW  ---
@@ -179,5 +179,6 @@ ORDER BY rok, custom_id_pay NULLS LAST, custom_id_cp NULLS LAST;
 				DROP TABLE IF EXISTS t_Ondrej_Romaniuk_project_SQL_primary_final;
 				
 				----------------------------------------------------
+
 
 
