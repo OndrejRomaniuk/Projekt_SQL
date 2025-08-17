@@ -125,9 +125,40 @@ sql-food-prices-salaries-project/
 *Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?*
 
 **Shrnutí výsledků:**  
-*Během sledovaného období vzrostla kupní síla pracovníků ve většině odvětví, pokud se hodnotí podle množství chleba a mléka, které si mohli koupit za průměrnou mzdu. Největší nárůst zaznamenala odvětví peněžnictví a pojišťovnictví, informační a komunikační činnosti a profesní, vědecké a technické činnosti. Naopak menší odvětví či „ostatní“ vykazují jen mírný růst.*
+*Na základě propojení mezd a cen potravin lze sledovat, kolik kilogramů chleba a litrů mléka bylo možné si koupit na začátku sledovaného období (rok 2006) a kolik na jeho konci (rok 2018).*
 
-*Celkově data ukazují, že růst mezd se projevil nerovnoměrně a reálná kupní síla se v jednotlivých sektorech zvyšovala různou rychlostí.*
+**Kupní síla mezd (chleba a mléko, 2006 vs. 2018)**
+```plaintext
+Odvětví                                           | Chléb 2006 (kg) | Chléb 2018 (kg) | Rozdíl chléb (kg) | Mléko 2006 (l) | Mléko 2018 (l) | Rozdíl mléko (l)
+-------------------------------------------------------------------------------------------------------------------------------
+A  Zemědělství, lesnictví, rybářství              |  919.22         | 1050.61         | +131.39           | 1026.16        | 1284.90        | +258.74
+B  Těžba a dobývání                               | 1492.97         | 1486.76         |  -6.21            | 1666.67        | 1818.31        | +151.64
+C  Zpracovatelský průmysl                         | 1146.51         | 1315.57         | +169.06           | 1279.90        | 1608.96        | +329.06
+D  Výroba a rozvod elektřiny, plynu, tepla...     | 1812.11         | 1913.14         | +101.03           | 2022.94        | 2339.78        | +316.84
+E  Zásobování vodou; odpady a sanace              | 1162.50         | 1184.99         |  +22.49           | 1297.75        | 1449.26        | +151.51
+F  Stavebnictví                                   | 1107.34         | 1161.98         |  +54.64           | 1236.17        | 1421.12        | +184.95
+G  Velkoobchod a maloobchod                       | 1130.43         | 1236.60         | +106.17           | 1261.95        | 1512.37        | +250.42
+H  Doprava a skladování                           | 1194.59         | 1215.33         |  +20.74           | 1333.57        | 1486.35        | +152.78
+I  Ubytování, stravování a pohostinství           |  724.21         |  794.95         |  +70.74           |  808.47        |  972.23        | +163.76
+J  Informační a komunikační činnosti              | 2220.41         | 2340.25         | +119.84           | 2478.74        | 2862.15        | +383.41
+K  Peněžnictví a pojišťovnictví                   | 2483.06         | 2264.16         | -218.90           | 2771.95        | 2769.08        |  -2.87
+L  Činnosti v oblasti nemovitostí                 | 1193.67         | 1159.61         |  -34.06           | 1332.55        | 1418.21        |  +85.66
+M  Profesní, vědecké a technické činnosti         | 1528.85         | 1608.29         |  +79.44           | 1706.72        | 1966.95        | +260.23
+N  Administrativní a podpůrné činnosti            |  896.03         |  864.42         |  -31.61           | 1000.28        | 1057.19        |  +56.91
+O  Veřejná správa a obrana                        | 1444.45         | 1498.07         |  +53.62           | 1612.50        | 1832.15        | +219.65
+P  Vzdělávání                                     | 1242.54         | 1297.13         |  +54.59           | 1387.10        | 1586.40        | +199.30
+Q  Zdravotní a sociální péče                      | 1181.23         | 1397.00         | +215.77           | 1318.66        | 1708.54        | +389.88
+R  Kulturní, zábavní a rekreační činnosti         | 1043.87         | 1171.57         | +127.70           | 1165.32        | 1432.83        | +267.51
+S  Ostatní činnosti                               | 1022.57         |  977.58         |  -44.99           | 1141.53        | 1195.59        |  +54.06
+```
+
+*Z dat vyplývá, že ve většině odvětví došlo ke zlepšení kupní síly – zaměstnanci si mohli v roce 2018 dovolit za svou mzdu pořídit více chleba i mléka než v roce 2006. Největší nárůst je patrný u mléka, kde rozdíl činí často stovky litrů navíc.*
+
+*Naopak v některých odvětvích, například peněžnictví a pojišťovnictví (K) nebo administrativní činnosti (N), kupní síla v případě chleba dokonce poklesla. U mléka byl pokles minimální, spíše stagnace.*
+
+*Celkově lze tedy shrnout, že kupní síla obyvatel rostla, ale rozdíly mezi odvětvími jsou výrazné – nejlépe si vedly informační technologie, zdravotnictví nebo veřejný sektor, zatímco část služeb a administrativní profese spíše stagnovaly.*
+
+*Tento vývoj dokládá, že růst mezd předčil růst cen potravin, i když nerovnoměrně podle oboru.*
 
 ---
 
@@ -184,8 +215,3 @@ Důvodem je, že zahrnutí takových záznamů by mohlo zkreslit výsledky srovn
 **Jméno:** *Ondřej Romaniuk* 
 **Datum:** *08/2025*
 **Kontakt:** *[LinkedIn](https://www.linkedin.com/in/ond%C5%99ej-romaniuk/) / [GitHub](https://github.com/OndrejRomaniuk)*
-
-
-
-
-
