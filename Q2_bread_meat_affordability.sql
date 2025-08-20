@@ -76,4 +76,3 @@ ORDER BY ch.industry_branch_code;
 
 SELECT *																									-- 3. Volání tabulky
 FROM t_Ondrej_Romaniuk_project_SQL_Q2_bread_meat_affordability;
-
