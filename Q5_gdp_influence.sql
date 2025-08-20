@@ -23,7 +23,8 @@ narust_hdp AS (
             2
         ), 0) AS gdp_growth
     FROM t_Ondrej_Romaniuk_project_SQL_secondary_final
-),
+	),
+	
 data_srovnani AS (
     SELECT
         nh.year,
@@ -65,8 +66,8 @@ data_srovnani AS (
 )
 SELECT *
 FROM data_srovnani
-ORDER BY
-	soucasny_rok_mzdy DESC;
+ORDER BY soucasny_rok_mzdy DESC;
     
 SELECT *																									-- 3. Volaní tabulky
 FROM t_Ondrej_Romaniuk_project_SQL_Q5_gdp_vs_growth;
+
