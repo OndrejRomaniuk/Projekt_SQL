@@ -38,5 +38,3 @@ ORDER BY p_start.industry_branch_code;
 
 SELECT *																									-- 3. Volání tabulky
 FROM t_Ondrej_Romaniuk_project_SQL_Q1_price_trends;
-
-
