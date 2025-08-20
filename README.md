@@ -117,7 +117,7 @@ sql-food-prices-salaries-project/
 *Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?*
 
 **Shrnutí výsledků:**  
-*Při srovnání dat počátečních a konečných let z dostupné časové řady vyplynulo, že mzdy vzrostly ve všech defaultně nastavených pracovních odvětvích.*
+*Na základě porovnání průměrných mezd mezi roky 2006 a 2018 můžeme říci, že mzdy rostly ve všech sledovaných odvětvích. Každá kategorie vykazuje kladný rozdíl mezi počáteční a konečnou hodnotou, přičemž se pohybují od zhruba 6 500 Kč (administrativní a podpůrné činnosti) až po více než 21 000 Kč (informační a komunikační činnosti). Nejvyšší nárůst zaznamenaly vysoce kvalifikované obory, jako je IT a peněžnictví, zatímco nejnižší nárůsty se objevily v administrativě a pohostinství. Z toho vyplývá, že mezi lety 2006 a 2018 nenajdeme odvětví, kde by průměrná mzda klesla, ale tempo růstu se výrazně liší mezi jednotlivými sektory. Tento rozdíl může být způsoben rozdílným rozvojem odvětví, technologickými změnami a poptávkou po specializovaných pracovnících.*
 
 ---
 
@@ -214,4 +214,5 @@ Důvodem je, že zahrnutí takových záznamů by mohlo zkreslit výsledky srovn
 **Jméno:** *Ondřej Romaniuk* 
 **Datum:** *08/2025*
 **Kontakt:** *[LinkedIn](https://www.linkedin.com/in/ond%C5%99ej-romaniuk/) / [GitHub](https://github.com/OndrejRomaniuk)*
+
 
