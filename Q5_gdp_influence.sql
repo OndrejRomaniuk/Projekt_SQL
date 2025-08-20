@@ -70,9 +70,3 @@ ORDER BY
     
 SELECT *																									-- 3. Volaní tabulky
 FROM t_Ondrej_Romaniuk_project_SQL_Q5_gdp_vs_growth;
-
-
-
-
-
-
