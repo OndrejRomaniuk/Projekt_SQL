@@ -34,6 +34,7 @@ plat_end AS (
 SELECT
 	p_start.industry_branch_code,
 	cpib.name,
+	p_end.plat_end - p_start.plat_start AS "rozdil (2006-2018)",
 CASE 
     WHEN p_end.plat_end > p_start.plat_start THEN 'ANO'
     ELSE 'NE'
@@ -47,3 +48,4 @@ ORDER BY p_start.industry_branch_code;
 
 SELECT *																									-- 3. Volání tabulky
 FROM t_Ondrej_Romaniuk_project_SQL_Q1_price_trends;
+
