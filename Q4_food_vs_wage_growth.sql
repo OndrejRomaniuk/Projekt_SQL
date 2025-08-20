@@ -66,7 +66,3 @@ SELECT * FROM srovnani;
 SELECT *																									-- 3. Volání tabulky				
 FROM t_Ondrej_Romaniuk_project_SQL_Q4_food_vs_wage_growth
 ORDER BY rozdil DESC;
-
-	
-	
-	
