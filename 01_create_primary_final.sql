@@ -179,6 +179,3 @@ ORDER BY rok, custom_id_pay NULLS LAST, custom_id_cp NULLS LAST;
 				DROP TABLE IF EXISTS t_Ondrej_Romaniuk_project_SQL_primary_final;
 				
 				----------------------------------------------------
-
-
-
