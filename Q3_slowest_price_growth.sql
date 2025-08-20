@@ -1,3 +1,4 @@
+
 -- Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)? --
 
 SELECT *																									-- 1. Pin zdrojové tabulky
@@ -38,6 +39,3 @@ LIMIT 1;
 
 SELECT *																									-- 3. Volání tabulky
 FROM t_Ondrej_Romaniuk_project_SQL_Q3_slowest_price_growth;
-
-DROP TABLE t_Ondrej_Romaniuk_project_SQL_Q3_slowest_price_growth;
-
