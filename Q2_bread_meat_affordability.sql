@@ -1,25 +1,27 @@
 
 -- Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd? --
 
-SELECT *																									-- 1. Pin zdrojové tabulky
+SELECT *																								                                	-- 1. Pin zdrojové tabulky
 FROM t_ondrej_romaniuk_project_sql_primary_final;
 
 CREATE TABLE t_Ondrej_Romaniuk_project_SQL_Q2_bread_meat_affordability AS									-- 2. Tabulka s odpovědí
 WITH
-  roky AS (																									-- min rok je 2006
-    SELECT 																									-- max rok je 2018
-      MIN(rok) AS min_rok, 
-      MAX(rok) AS max_rok 
+roky AS (																						                              	   		-- min rok je 2006
+    SELECT 																					                              				-- max rok je 2018
+        MIN(rok) AS min_rok, 
+        MAX(rok) AS max_rok 
     FROM t_ondrej_romaniuk_project_sql_primary_final
   ),
   
-  plat_start AS (																							-- plat / odvětví / 2006
+plat_start AS (																						                            	-- plat / odvětví / 2006
     SELECT industry_branch_code, value_pay AS plat_start
-    FROM t_ondrej_romaniuk_project_sql_primary_final, roky
+    FROM 
+        t_ondrej_romaniuk_project_sql_primary_final, 
+        roky
     WHERE rok = roky.min_rok
   ),
   
-  plat_end AS (																								-- plat / odvětví / 2018
+  plat_end AS (																						                            		-- plat / odvětví / 2018
     SELECT industry_branch_code, value_pay AS plat_end
     FROM t_ondrej_romaniuk_project_sql_primary_final, roky
     WHERE rok = roky.max_rok
@@ -75,3 +77,4 @@ ORDER BY ch.industry_branch_code;
 
 SELECT *																									-- 3. Volání tabulky
 FROM t_Ondrej_Romaniuk_project_SQL_Q2_bread_meat_affordability;
+
