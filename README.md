@@ -201,8 +201,7 @@ S  Ostatní činnosti                               | 1022.57         |  977.58 
 ---
 
 ## 6️⃣ Poznámky k datům
-- Některé roky neobsahují kompletní data pro všechny kategorie potravin.
-- U mzdových dat chybí údaje za některé okresy v počátečních letech.
+- Některé roky neobsahují kompletní data pro všechny kategorie potravin - "Jakostní víno bílé" s kódem 212101 bylo za celou časovou řadu zachyceno pouze 4x.         Ostatní potraviny 13x.
 - Všechny ceny jsou v Kč, mzdy jsou průměrné měsíční hrubé.
 
 Během analýzy se ukázalo, že v tabulce czechia_payroll existují záznamy, které obsahují platnou hodnotu (value), ale u příslušného odvětví (industry_branch) je hodnota NULL.
@@ -215,3 +214,4 @@ Důvodem je, že zahrnutí takových záznamů by mohlo zkreslit výsledky srovn
 **Jméno:** *Ondřej Romaniuk* 
 **Datum:** *08/2025*
 **Kontakt:** *[LinkedIn](https://www.linkedin.com/in/ond%C5%99ej-romaniuk/) / [GitHub](https://github.com/OndrejRomaniuk)*
+
