@@ -73,6 +73,5 @@ LEFT JOIN mleko_afford ml ON ch.industry_branch_code = ml.industry_branch_code
 LEFT JOIN czechia_payroll_industry_branch cpib ON ch.industry_branch_code = cpib.code
 ORDER BY ch.industry_branch_code;
 
-
 SELECT *																									-- 3. Volání tabulky
 FROM t_Ondrej_Romaniuk_project_SQL_Q2_bread_meat_affordability;
